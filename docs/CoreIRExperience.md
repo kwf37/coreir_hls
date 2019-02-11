@@ -39,3 +39,7 @@ To define a generator, one must do the following:
    definition.
 5. To put it all together, in a top level you would define Params, TypeGen, and Generator, then use the Generator's
    getModule(Param args) function to instance modules, then call runGenerator() on the instanced modules
+   
+   
+## Compiling
+Core_ir json files can be compiled to verilog and several other languages by running `coreir -i <input> -o <targe_lang>`. Passes can also be specified with `-p` or `-e`/
