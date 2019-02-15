@@ -7,3 +7,4 @@
 * Argonaut for handling JSON in Scala
 * CoreIR as an intermediate hardware representation
 * If generators are transformed, do generated instances automatically get transformed?
+* Are generators higher order? (Generator takes in generator)
