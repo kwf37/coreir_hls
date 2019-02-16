@@ -2,7 +2,7 @@ import scala.io.StdIn._
 
 object ParseExpr extends ArithLogic {
   def main(args: Array[String]){
-    repl()
+    //repl()
   }
 
   def repl():Unit = {
@@ -14,7 +14,10 @@ object ParseExpr extends ArithLogic {
       System.exit(0)
     }else{
       println("Input : " + input)
-      println(parseAll(expr, input))
+      parseAll(func, input) match {
+        case Success(result, _) => println(result)
+        case failure : NoSuccess => scala.sys.error(failure.msg)
+      }
       repl()
     }
   }
