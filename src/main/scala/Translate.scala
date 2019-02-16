@@ -34,12 +34,14 @@ case class Instance(genref: Option[NamedRef], genargs: Option[Values], modref: O
 // Type of typ could be changed to Record- TODO doesn't capture everything in the schema
 case class Modul(typ: Type, instances: Option[Map[String, Instance]], connections: Option[List[Connection]],  modparams: Option[Param], defaultmodargs: Option[Values])
 
+case class Generator(typegen: NamedRef, genparams: List[Param], defaultgenargs: Option[List[Const]], modules: List[Modul])
+
 case class Param(field_name: String, field_type: ValueType)
 
 case class Connection(a: String, b: String)
 
-case class Namespace()
+case class Namespace(namedtypes: Option[Map[String, NamedType]], typegens: Option[Map[String, TypeGen]], modules: Option[Map[String, Modul]], generators: Option[Map[String, Generator]])
 
-case class Top(name: String, namespaces: Map[String, Namespace])
+case class Top(name: NamedRef, namespaces: Map[String, Namespace])
 
 }
